@@ -4,11 +4,18 @@
 package Cab.Invoice.Generator;
 
 import org.junit.Test;
+
+import junit.framework.Assert;
+
 import static org.junit.Assert.*;
 
 public class CabInvoiceTest {
-    @Test public void testSomeLibraryMethod() {
-        CabInvoice classUnderTest = new CabInvoice();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+	@Test
+    public void givenDistanceAndTime_ShouldReturnTotalFare() {
+    	CabInvoice cabInvoice = new CabInvoice();
+    	double distance = 2.0;
+    	int time = 5;
+    	double fare = cabInvoice.calculateFare(distance, time);
+    	Assert.assertEquals(25, fare, 0.0);
     }
 }
