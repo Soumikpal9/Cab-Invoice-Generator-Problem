@@ -10,10 +10,7 @@ public class CabInvoice {
 	
 	public double calculateFare(double distance, int time) {
 		double fare = (distance * COST_PER_KILOMETER) + (time * COST_PER_TIME);
-		if(fare < MINIMUM_FARE) {
-			fare = MINIMUM_FARE;
-		}
-		return fare;
+		return Math.max(fare, MINIMUM_FARE);
 	}
 	
 	public InvoiceSummary calculateFare(Ride[] rides) {
